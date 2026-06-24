@@ -410,10 +410,10 @@ def run_lambda_study(
     """
 
     if lam_tikhonov_values is None:
-        lam_tikhonov_values = [1e-4, 1e-3, 1e-2, 1e-1]
+        lam_tikhonov_values=[1e-4, 3e-4, 1e-3, 3e-3, 1e-2, 3e-2, 1e-1]
 
     if lam_tv_values is None:
-        lam_tv_values = [1e-4, 5e-4, 1e-3, 5e-3, 1e-2]
+        lam_tv_values=[1e-4, 5e-4, 1e-3, 5e-3, 1e-2, 5e-2]
 
     os.makedirs(output_root, exist_ok=True)
 
@@ -677,8 +677,8 @@ if __name__ == "__main__":
             case_name="sparse_angle_noise",
             n=512,
             rng_seed=0,
-            lam_tikhonov_values=[1e-4, 1e-3, 1e-2, 1e-1],
-            lam_tv_values=[1e-4, 5e-4, 1e-3, 5e-3, 1e-2],
+            lam_tikhonov_values=[1e-4, 3e-4, 1e-3, 3e-3, 1e-2, 3e-2, 1e-1]
+            lam_tv_values=[1e-4, 5e-4, 1e-3, 5e-3, 1e-2, 5e-2]
             tau_tv=0.01,
             n_iter_tv=50,
             output_root="resultats_lambda"
